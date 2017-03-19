@@ -36,13 +36,49 @@ public class Cal{
 				break;
 		}
 	}
+	/*
+	Вывод результатов
+	*/
 	public static void output(double i1,double i2, String znak,String otvet){
 		System.out.println(i1+" "+znak+" "+i2+" = "+ otvet);
 	}
+	public static void output(int i1,int i2, String znak,String otvet){
+		System.out.println(i1+" "+znak+" "+i2+" = "+ otvet);
+	}
+	public static void output(short i1,short i2, String znak,String otvet){
+		System.out.println(i1+" "+znak+" "+i2+" = "+ otvet);
+	}
+	public static void output(float i1,float i2, String znak,String otvet){
+		System.out.println(i1+" "+znak+" "+i2+" = "+ otvet);
+	}
+	public static void output(long i1,long i2, String znak,String otvet){
+		System.out.println(i1+" "+znak+" "+i2+" = "+ otvet);
+	}
+	/*
+	Умножение
+	 */
 	public static void multiplear(double i1,double i2,String znak){
 		String otvet = Double.toString(i1*i2);
 		output(i1,i2,znak,otvet);
 	}
+	public static void multiplear(int i1,int i2,String znak){
+		String otvet = Integer.toString(i1*i2);
+		output(i1,i2,znak,otvet);
+	}
+	public static void multiplear(short i1,short i2,String znak){
+		String otvet = Integer.toString(i1*i2);
+		output(i1,i2,znak,otvet);
+	}
+
+	public static void multiplear(float i1,float i2,String znak){
+		String otvet = Double.toString(i1*i2);
+		output(i1,i2,znak,otvet);
+	}
+	public static void multiplear(long i1,long i2,String znak){
+		String otvet = Double.toString(i1*i2);
+		output(i1,i2,znak,otvet);
+	}
+	/*-------------------------------*/
 	public static void divide(double i1,double i2,String znak){
 		String otvet = Double.toString(i1/i2);
 		output(i1,i2,znak,otvet);
