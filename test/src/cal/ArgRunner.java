@@ -7,8 +7,8 @@ public class ArgRunner {
     public static void main(String[] arg) {
         System.out.println("Calculate...");
         if (arg.length == 2) {
-            int first = Integer.valueOf(arg[0]);
-            int second = Integer.valueOf(arg[1]);
+            double first = Double.valueOf(arg[0]);
+            double second = Double.valueOf(arg[1]);
             String znak = "+";
             Calculator calc = new Calculator();
             calc.add(znak,first, second);
