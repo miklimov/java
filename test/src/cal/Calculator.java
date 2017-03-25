@@ -1,36 +1,37 @@
 package cal;
 import java.lang.Math;
 /**
- * Created by М on 20.03.2017.
+ * Класс калькулятор.
  */
 public class Calculator {
     /**
      Результат вычисления.
      */
     private double result;
-    /**
-     * Суммируем аргументы.
-     * @param params Аргументы суммирования.
-     */
 	
-	public void add(String znak,double ... params) {
+    /**
+     * Вычисление сложения, деления, умножение, вычитание, возведение в степень.
+	 * @znak знак вычисления
+     * @first первый аргумент 
+	 * @second второй аргумент
+     */
+	public void add(String znak,double first, double second) {
 		try{
 			switch(znak) {
 				case "*":
-					this.result = params[0]*params[1];
+					this.result = first*second;
 					break;
 				case "/":
-					this.result = params[0]/params[1];
+					this.result = first/second;
 					break;
 				case "+":
-					this.result = params[0]+params[1];
-					
+					this.result = first+second;					
 					break;
 				case "-":
-					this.result = params[0]-params[1];
+					this.result = first-second;
 					break;
 				case "^":
-					this.result = (double) Math.pow(params[0],params[1]);
+					this.result = Math.pow(first,second);
 					break;
 				default:
 					System.out.println("Error!!!");
