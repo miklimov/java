@@ -9,7 +9,7 @@ public class InteractRunner {
 	/**
 	* Параметр для запоминания прошлого результата
 	*/
-	private static String parent;
+	private  static String parent;
 	/**
 	* Параметр для запоминания знака
 	*/
@@ -53,9 +53,7 @@ public class InteractRunner {
 	public static void outOperation(){
 				System.out.println("Choose the operation:");
                 System.out.println("Multiplear   *");
-                System.out.println("Divide       /");
-                System.out.println("Summation    +");
-                System.out.println("Subtraction  -");
+                System.out.println("Divide       /");      
                 System.out.println("Degree       ^");
 	}
 	/**
