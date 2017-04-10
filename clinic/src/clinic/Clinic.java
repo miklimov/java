@@ -36,7 +36,7 @@ public class Clinic{
     /**
      * Ввод клиента и питомца
      */
-    public void inputUserPet(){
+    public void inputUserAnimal(){
         Scanner scan = new Scanner(System.in);
         System.out.println("Введите имя владельца:");
         String nameClient = scan.next();
@@ -47,16 +47,16 @@ public class Clinic{
             System.out.println("Кошка  - 2");
             String pet = scan.next();
             System.out.println("Введите имя питомца:");
-            String namePet = scan.next();
+            String nameAnimal = scan.next();
             switch (pet) {
                 case "1":
-                    addClient(new Client(nameClient, new Dog(namePet)));
+                    addClient(new Client(nameClient, new Dog(nameAnimal)));
                     break;
                 case "2":
-                    addClient(new Client(nameClient, new Cat(namePet)));
+                    addClient(new Client(nameClient, new Cat(nameAnimal)));
                     break;
                 default:
-                    addClient(new Client(nameClient, new Dog(namePet)));
+                    addClient(new Client(nameClient, new Dog(nameAnimal)));
             }
         }else{
             System.out.println("Клиент "+nameClient+" существует.");
@@ -74,12 +74,13 @@ public class Clinic{
         System.out.println("Редактировать имя клиента ---- 4");
         System.out.println("Редактировать кличку питомца - 5");
         System.out.println("Удалить клиента -------------- 6");
+        System.out.println("Просмотр клиентов------------- 7");
         Scanner s = new Scanner(System.in);
         String itemMenu = s.next();
         String name,newName;
         switch (itemMenu){
             case "1":
-                inputUserPet();
+                inputUserAnimal();
                 break;
             case "2":
                 System.out.println("Введите кличку питомца:");
@@ -110,6 +111,12 @@ public class Clinic{
                 name = s.next();
                 deleteClient(name);
                 break;
+            case "7":
+                System.out.println("****************************");
+                System.out.println("* Список клиентов клиники: *");
+                System.out.println("****************************");
+                viewClient();
+                break;
             default:
                     System.out.println("Вы не выбрали пункт меню.");
         }
@@ -121,7 +128,7 @@ public class Clinic{
         String nameP="Не найдено совпадение!";
         for(int cln=0;cln<clients.size(); cln++) {
             if (clients.get(cln).getNameClient().contains(name)) {
-                nameP = clients.get(cln).getPet().getNamePet();
+                nameP = clients.get(cln).getAnimal().getNameAnimal();
             }
         }
         return nameP ;
@@ -132,7 +139,7 @@ public class Clinic{
     public String findPetByClient(String name){
         String nameP = "Не найдено совпадение!";
         for(int cln=0;cln<clients.size(); cln++) {
-            if (clients.get(cln).getPet().getNamePet().contains(name)) {
+            if (clients.get(cln).getAnimal().getNameAnimal().contains(name)) {
                 nameP = clients.get(cln).getNameClient();
             }
         }
@@ -155,7 +162,7 @@ public class Clinic{
     public void editNamePet(String name,String namePet){
         for(int inc=0;inc<clients.size(); inc++) {
             if (clients.get(inc).getNameClient().contains(name)) {
-                clients.get(inc).getPet().setName(namePet);
+                clients.get(inc).getAnimal().setNameAnimal(namePet);
             }
         }
         System.out.println("Изменения сохранены.");
@@ -173,6 +180,20 @@ public class Clinic{
         }
         if(size==clients.size()){
             System.out.println("Клиент не найден.");
+        }
+    }
+
+    /**
+     * Вывод клиентов клиники
+     */
+    public void viewClient(){
+        if(!clients.isEmpty()){
+            for(int inc=0;inc<clients.size(); inc++) {
+                System.out.println((inc+1)+". Клиент: "+clients.get(inc).getNameClient()+" - Питомец: "
+                        +clients.get(inc).getAnimal().getNameAnimal());
+            }
+        }else {
+            System.out.println("В клиники нет еще клиентв.");
         }
     }
 

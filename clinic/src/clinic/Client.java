@@ -10,15 +10,15 @@ public class Client{
     /*
     *Питомец
     */
-    private Pet pet;
+    private Animal animal;
     /**
      *Конструктор класса клиент
      *@nameClient имя клиента
      *@pet питомец
      */
-    public Client(String nameClient, Pet pet){
+    public Client(String nameClient, Animal animal){
         this.nameClient = nameClient;
-        this.pet = pet;
+        this.animal = animal;
     }
     /*
     *Возвращает имя клиента
@@ -35,7 +35,7 @@ public class Client{
     /*
     *Возвращает питомеца
     */
-    public Pet getPet(){
-        return this.pet;
+    public Animal getAnimal(){
+        return this.animal;
     }
 }

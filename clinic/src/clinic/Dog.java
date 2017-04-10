@@ -2,30 +2,24 @@ package clinic;
 /**
  *Реализация пса
  */
-public class Dog implements Pet{
+public class Dog extends Animal{
+
     /**
-     Имя пса
+     * собака+ Кличка
      */
-    private String name;
+    private String nameD;
+
     /**
      * Конструктор класса Dog
      * @param name
      */
     public Dog(String name){
-        this.name = name;
+        super(name);
     }
-    /**
-     Перекрытый метод возвращающий имя питомца
-     */
     @Override
-    public String getNamePet(){
-        return this.name;
+    public String getNameAnimal(){
+        nameD = " собака "+name;
+        return this.nameD;
     }
-    /*
-    Перекытый метод устанавливающий кличку питомца
-     */
-    @Override
-    public void setName(String name) {
-        this.name = name;
-    }
+
 }
