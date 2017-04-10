@@ -95,5 +95,6 @@ public class Cal{
 		String otvet = Double.toString(Math.pow(i1,i2));
 		output(i1,i2,znak,otvet);
 	}
+	/**/
 
 }
